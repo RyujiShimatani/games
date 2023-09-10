@@ -1,24 +1,31 @@
-# README
+# ゲーマーコミュニティ
+​
+## サイト概要
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### サイトテーマ
+共通のゲームが好きな人とチャットで交流し繋がり、ゲーミングライフを豊かにするコミュニティサイト
+### テーマを選んだ理由
+最近のゲームタイトルは、オンラインプレイが充実しています。
+ゲーム内のプレイヤーランダム検索などでは人見知りしてしまう人がいるので、
+まずこのサイトを利用する事で交流し、ある程度仲を深めた人を気軽に誘い、
+ゲームをプレイできる環境を作りたいと思いこのサイトを作りました。
+### ターゲットユーザ
+- ゲームが好きな人
+- ゲームを通じて友人を増やしたい人
+- 一緒にゲームをする友人をふやしたい人
+### 主な利用シーン
+- 一人でゲームすることに飽きた時
+- 気の合うゲーマーとつながるため
+​
+## 設計書
+<!--テーマを設定・提出する時点では不要です-->
+​
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
+​
+## 使用素材
+- ゲームの画像投稿などは著作権に触れるため、使用、投稿機能での投稿はしない方針です
