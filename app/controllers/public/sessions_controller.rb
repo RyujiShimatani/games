@@ -7,7 +7,11 @@ class Public::SessionsController < Devise::SessionsController
   # def new
   #   super
   # end
-
+  def guest_sign_in
+    end_user = EndUser.guest
+    sign_in end_user
+    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+  end
   # POST /resource/sign_in
   # def create
   #   super

@@ -16,16 +16,8 @@
       <div class="col-3"><%= f.email_field :email, :size => "25", placeholder: "sample@example.com" %></div>
     </div>
     <div class="row">
-      <div class="col-3 offset-md-1"><%= f.label "好きなゲーム" %></div>
-      <div class="col-3"><%= f.text_field :favorite_game, :size => "40", placeholder: "" %></div>
-    </div>
-    <div class="row">
-      <div class="col-3 offset-md-1"><%= f.label "自己紹介" %></div>
-      <div class="col-3"><%= f.text_field :introduction, placeholder: "" %></div>
-    </div>
-    <div class="row">
-     <div class="col-3 offset-md-1"><%= f.label :sex %></div>
-     <div class="col-3"><%= f.select :sex,sex_i18n.invert,{} %></div>
+      <div class="col-3 offset-md-1"><%= f.label "性別" %></div>
+      <div class="col-3"><%= f.select :sex,Customer.sexes_i18n.invert,{} %></div>
     </div>
     <div class="row">
       <div class="col-3 offset-md-1">
