@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2023_09_11_054109) do
     t.string "nick_name", null: false
     t.text "favorite_game"
     t.text "introduction"
-    t.date "birthday", null: false
+    t.date "birthday"
     t.integer "sex", default: 0, null: false
     t.boolean "is_deleted", default: false, null: false
     t.datetime "created_at", precision: 6, null: false

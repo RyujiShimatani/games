@@ -18,7 +18,7 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
       t.string :nick_name, null: false
       t.text :favorite_game
       t.text :introduction
-      t.date :birthday , null: false
+      t.date :birthday
       t.integer :sex, null: false, default: 0
       t.boolean :is_deleted, null: false, default: false
 

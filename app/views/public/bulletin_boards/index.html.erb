@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <h2>掲示板</h2>
+
+      <table class="table">
+        <thead>
+        <tr>
+          <th>会員ID</th>
+          <th>ニックネーム</th>
+          <th>タイトル</th>
+          <th>内容</th>
+        </tr>
+      </thead>
+        <% @bulletin_boards.each do |bulletin| %>
+          <tr>
+            <td><%= bulletin.customer_id %></td>
+            <td><%= Customer.find(bulletin.customer_id).nick_name %></td>
+            <td><%= link_to bulletin.title, bulletin_board_path(bulletin) %></td>
+            <td><%= bulletin.message %></td>
+            <td><% if bulletin.customer == current_customer %>
+              <%= link_to "削除", bulletin_board_path(bulletin), method: :delete %>
+            <% end %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>

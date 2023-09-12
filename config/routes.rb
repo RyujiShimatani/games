@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     get 'homes/top'
     get 'homes/about'
   end
+  # devise_scope :customers do
+  #   post 'customers/guest_sign_in', to: 'customers/sessions#guest_sign_in'
+  # end
   devise_for :customers,skip: [:passwords], controllers: {
     registrations: "public/registrations",
     sessions: 'public/sessions'
@@ -14,8 +17,11 @@ Rails.application.routes.draw do
   }
   scope module: :public do
       root to: 'homes#top'
+      post 'customers/guest_sign_in', to: 'customers/sessions#guest_sign_in'
       get "/about" => "homes#about", as: "about"
-      post 'public/guest_sign_in', to: 'public/sessions#guest_sign_in'
+      resources :bulletin_boards, only: [:new, :index, :show, :edit, :create, :destroy] do
+        resources :comments, only: [:create]
+      end
       resources :genres, only: [:index,]
       resources :customers, only: [:index, :show, :edit, :update]
   end
