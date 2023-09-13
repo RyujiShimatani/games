@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       post 'customers/guest_sign_in', to: 'customers/sessions#guest_sign_in'
       get "/about" => "homes#about", as: "about"
       resources :bulletin_boards, only: [:new, :index, :show, :edit, :create, :destroy] do
+        resource :favorites, only: [:new,:create, :destroy]
         resources :comments, only: [:create]
       end
       resources :genres, only: [:index,]
