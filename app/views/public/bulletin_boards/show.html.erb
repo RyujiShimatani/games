@@ -15,16 +15,4 @@
     <%= f.submit "送信する" %>
   <% end %>
 </div>
-<% if @bulletin_board.favorited_by?(current_customer) %>
-    <p>
-      <%= link_to bulletin_board_favorites_path(@bulletin_board), method: :delete do %>
-        ♥<%= @bulletin_board.favorites.count %> いいね
-      <% end %>
-    </p>
-    <% else %>
-    <p>
-      <%= link_to bulletin_board_favorites_path(@bulletin_board), method: :post do %>
-        ♡<%= @bulletin_board.favorites.count %> いいね
-      <% end %>
-    </p>
-<% end %>
+<%= render "public/favorites/btn", bulletin_board: @bulletin_board %>
