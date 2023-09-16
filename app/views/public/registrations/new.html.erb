@@ -20,6 +20,10 @@
       <div class="col-3"><%= f.select :sex,Customer.sexes_i18n.invert,{} %></div>
     </div>
     <div class="row">
+      <div class="col-3 offset-md-1"><%= f.label "誕生日" %></div>
+      <div class="col-3"><%= f.date_select :birthday, start_year: Time.now.year - 100, end_year: Time.now.year, order: [:year, :month, :day], prompt: { year: 'Year', month: 'Month', day: 'Day' }, class: 'form-control' %></div>
+    </div>
+    <div class="row">
       <div class="col-3 offset-md-1">
         <% if @minimum_password_length %>
           <%= f.label "パスワード(#{@minimum_password_length}文字以上)" %>
