@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
 
-  namespace :public do
-    get 'homes/top'
-    get 'homes/about'
-  end
-
   devise_for :customers,skip: [:passwords], controllers: {
     registrations: "public/registrations",
     sessions: 'public/sessions'
   }
 
+#ゲストログイン
   devise_scope :customer do
     post 'customers/guest_sign_in', to: 'public/sessions#guest_sign_in'
   end
@@ -26,6 +22,8 @@ Rails.application.routes.draw do
       end
       resources :genres, only: [:index,]
       resources :customers, only: [:index, :show, :edit, :update]
+      # 論理削除用のルーティング
+      patch  '/customers/withdraw' => 'customers#withdraw'
   end
 
   namespace :admin do

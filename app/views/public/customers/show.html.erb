@@ -26,6 +26,7 @@
                 <td><%= @customer.email %></td>
               </tr>
             </table>
+            <%= link_to "退会する", customers_withdraw_path, method: :patch, :class => "btn btn-danger ms-3", data: { confirm: "本当に退会しますか？" }  %>
         </div>
     </div>
 </div>
