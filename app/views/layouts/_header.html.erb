@@ -19,7 +19,22 @@
           </li>
           <% elsif customer_signed_in? %>
           <li class="my-auto">
-            <div class="text-white pr-2">ようこそ！<%= current_customer.nick_name %>様</div>
+            <div class="text-white pr-2">ログイン中です <%= current_customer.nick_name %></div>
+          </li>
+          <li>
+            <%= link_to bulletin_boards_path, class: 'nav-link text-light' do %>
+              <i class=""></i> 掲示板
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_bulletin_board_path, class: 'nav-link text-light' do %>
+              <i class=""></i> 投稿する
+            <% end %>
+          </li>
+          <li>
+            <%= link_to favorited_bulletin_boards_path,　class: 'nav-link text-light' do %>
+              <i class=""></i> いいねした投稿
+            <% end %>
           </li>
           <li>
             <%= link_to destroy_customer_session_path, method: :delete,class: 'nav-link text-light' do %>
