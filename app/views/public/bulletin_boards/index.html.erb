@@ -10,6 +10,7 @@
           <th>タイトル</th>
           <th>内容</th>
         </tr>
+        <%= link_to 'いいねした投稿一覧', favorited_bulletin_boards_path %>
       </thead>
         <% @bulletin_boards.each do |bulletin_board| %>
           <tr>

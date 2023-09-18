@@ -9,6 +9,8 @@ class Customer < ApplicationRecord
    has_many :bulletin_boards, dependent: :destroy
    has_many :comments, dependent: :destroy
    has_many :favorites, dependent: :destroy
+   has_many :favorited_bulletin_boards, through: :favorites, source: :bulletin_board
+   has_and_belongs_to_many :genres
 
     enum sex: {no＿selection: 0, men: 1, woman: 2,}
     # ゲストログイン

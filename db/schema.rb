@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_09_13_100858) do
+ActiveRecord::Schema.define(version: 2023_09_18_060928) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -40,6 +40,11 @@ ActiveRecord::Schema.define(version: 2023_09_13_100858) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "customer_genres", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "customers", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -57,6 +62,14 @@ ActiveRecord::Schema.define(version: 2023_09_13_100858) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
+  end
+
+  create_table "customers_genres", id: false, force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "genre_id"
+    t.index ["customer_id", "genre_id"], name: "index_customers_genres_on_customer_id_and_genre_id", unique: true
+    t.index ["customer_id"], name: "index_customers_genres_on_customer_id"
+    t.index ["genre_id"], name: "index_customers_genres_on_genre_id"
   end
 
   create_table "favorites", force: :cascade do |t|

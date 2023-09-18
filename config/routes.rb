@@ -20,6 +20,7 @@ Rails.application.routes.draw do
         resource :favorites, only: [:new,:create, :destroy]
         resources :comments, only: [:create]
       end
+      get '/favorited_bulletin_boards', to: 'favorites#index', as: 'favorited_bulletin_boards'
       resources :genres, only: [:index,]
       resources :customers, only: [:index, :show, :edit, :update]
       # 論理削除用のルーティング
