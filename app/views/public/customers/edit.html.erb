@@ -6,6 +6,10 @@
           <div class="col-1"><%= f.text_field :nick_name, :size => "10", placeholder: "令和" %></div>
         </div>
         <div class="row">
+          <div class="col-2 offset-md-1"><%= f.label "プロフィール画像" %></div>
+            <div class="col-1"><%= f.file_field :image, accept: "image/*" %></div>
+        </div>
+        <div class="row">
           <div class="col-2 offset-md-1"><%= f.label "好きなゲームジャンル" %></div>
     　　    <div class="col-1"><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "選択して下さい" %></div>
     　   </div>
