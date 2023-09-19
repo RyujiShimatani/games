@@ -1,13 +1,38 @@
 <div class='container pt-5'>
+  <div class="row">
+    <div class="text-left"><h1><%= @customer.nick_name %>さんのマイページ</h1></div>
+  </div>
+    <div class="row">
+      <div class="col text-center">
+        <% if @customer.image.attached? %>
+          <%= image_tag @customer.image, size: "200x200",class: "rounded-circle"  %>
+        <% else %>
+          <%= image_tag 'no_image', size: "200x200",class: "rounded-circle"  %>
+        <% end %>
+    </div>
+  </div>
     <div class='row'>
-        <div class='col-md-6'>
-          <h2>マイページ</h2>
-            <h5><strong>登録情報</strong>
+      <div class='col text-right'>
               <% if @customer == current_customer %>
                 <%= link_to "編集する", edit_customer_path(@customer), class: "btn btn-success" %>
               <% end %>
-            </h5>
-
+      </div>
+    </div>
+    <div class="row m-4 border border-5 ">
+      <div class="col text-left">
+        <h4><自己紹介></h4>
+      <div class="col text-center">
+        <%= @customer.introduction %>
+      </div>
+      </div>
+    </div>
+      <div class='row m-3'>
+        <div class="col text-center">
+          <h5><プロフィール></h5>
+        </div>
+      </div>
+      <div class='row'>
+       <div class="col text-center">
             <table class='table table-bordered mt-3'>
               <tr>
                 <td class='table-active'>ニックネーム</td>
@@ -32,27 +57,16 @@
                 <td class='table-active'>好きなゲームジャンル</td>
                 <td><%#= @customer.genres.pluck(:name).join(', ') %></td>
               </tr>
-              <td>
-              <% if @customer.image.attached? %>
-                <%= image_tag @customer.image, size: "200x200",class: "rounded-circle"  %>
-              <% else %>
-                <%= image_tag 'no_image', size: "200x200",class: "rounded-circle"  %>
-              <% end %>
-              </td>
 
               <!--<tr>-->
               <!--  <td class='table-active'>好きなゲームジャンル</td>-->
-                <td><%#= @customer.genre.name) %></td>
+                <%#= @customer.genre.name) %>
               <!--</tr>-->
-              <tr>
-                <td class='table-active'>自己紹介</td>
-                <td><%= @customer.introduction %> </td>
-              </tr>
-              <tr>
                 <td class='table-active'>性別</td>
                 <td><%= @customer.sex_i18n %> </td>
               </tr>
             </table>
+
         </div>
     </div>
 </div>
