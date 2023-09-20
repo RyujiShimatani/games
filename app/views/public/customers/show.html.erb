@@ -55,7 +55,7 @@
               </tr>
               <tr>
                 <td class='table-active'>好きなゲームジャンル</td>
-                <td><%#= @customer.genres.pluck(:name).join(', ') %></td>
+                <td><%= @customer.genres.pluck(:name).join(', ') %></td>
               </tr>
 
               <!--<tr>-->

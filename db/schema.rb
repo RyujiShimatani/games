@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_09_19_105039) do
+ActiveRecord::Schema.define(version: 2023_09_20_111756) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -79,7 +79,6 @@ ActiveRecord::Schema.define(version: 2023_09_19_105039) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer "genre_id"
     t.string "nick_name", null: false
     t.text "favorite_game"
     t.text "introduction"

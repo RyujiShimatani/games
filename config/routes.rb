@@ -21,10 +21,10 @@ Rails.application.routes.draw do
         resources :comments, only: [:create]
       end
       get '/favorited_bulletin_boards', to: 'favorites#index', as: 'favorited_bulletin_boards'
-      resources :genres, only: [:index,]
-      resources :customers, only: [:index, :show, :edit, :update]
+      resources :genres, only: [:index]
       # 論理削除用のルーティング
       patch  '/customers/withdraw' => 'customers#withdraw'
+      resources :customers, only: [:index, :show, :edit, :update]
   end
 
   namespace :admin do

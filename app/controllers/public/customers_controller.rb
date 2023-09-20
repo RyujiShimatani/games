@@ -1,6 +1,6 @@
 class Public::CustomersController < ApplicationController
   before_action :authenticate_customer!
-  before_action :ensure_currect_customer, only: [:edit, :update,:confirm, :withdraw]
+  before_action :ensure_currect_customer, only: [:edit, :update,:confirm]
 
   def show
     @customer = Customer.find(params[:id])
@@ -33,7 +33,7 @@ class Public::CustomersController < ApplicationController
 private
 
   def customer_params
-    params.require(:customer).permit(:nick_name,:genre_id, :favorite_game,:introduction,:sex, :email,:birthday,:image)
+    params.require(:customer).permit(:nick_name, :favorite_game,:introduction,:sex, :email,:birthday,:image, :is_deleted, genre_ids:[])
   end
 
   def ensure_currect_customer
