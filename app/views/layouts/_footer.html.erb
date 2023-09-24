@@ -1,76 +1,69 @@
 <footer>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#deb887">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#808080">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
+      <!-- ナビゲーションヘッダー（タイトルやロゴなど） -->
+      <a class="navbar-brand" href="#"></a>
+
+      <!-- メニュー項目 -->
+      <ul class="navbar-nav ">
         <% if admin_signed_in? %>
-          <li>
+          <li class="nav-item">
             <%= link_to admin_customers_path, class: 'nav-link text-light' do %>
               <i class=""></i> 顧客一覧
             <% end %>
           </li>
-          <li>
+          <li class="nav-item">
             <%= link_to admin_genres_path, class: 'nav-link text-light' do %>
               <i class=""></i> ジャンル一覧
             <% end %>
           </li>
-          <li>
+          <li class="nav-item">
             <%= link_to destroy_admin_session_path, method: :delete,class: 'nav-link text-light' do %>
               <i class=""></i> ログアウト
             <% end %>
           </li>
-          <% elsif customer_signed_in? %>
-          <li class="my-auto">
-            <div class="text-white pr-2">ログイン中です <%= current_customer.nick_name %></div>
-          </li>
-          <li>
+        <% elsif customer_signed_in? %>
+          <li class="nav-item">
             <%= link_to customer_path(current_customer), class: 'nav-link text-light' do %>
               <i class=""></i> マイページ
             <% end %>
           </li>
-          <li>
+          <li class="nav-item">
             <%= link_to bulletin_boards_path, class: 'nav-link text-light' do %>
               <i class=""></i> 掲示板
             <% end %>
           </li>
-          <li>
+          <li class="nav-item">
             <%= link_to new_bulletin_board_path, class: 'nav-link text-light' do %>
               <i class=""></i> 投稿する
             <% end %>
           </li>
-          <li>
-            <%= link_to favorited_bulletin_boards_path,　class: 'nav-link text-light' do %>
+          <li class="nav-item">
+            <%= link_to favorited_bulletin_boards_path, class: 'nav-link text-light' do %>
               <i class=""></i> いいねした投稿
             <% end %>
           </li>
-          <li>
-            <%= link_to destroy_customer_session_path, method: :delete,class: 'nav-link text-light' do %>
-              <i class=""></i> ログアウト
-            <% end %>
-          </li>
         <% else %>
-          <li>
+          <li class="nav-item">
             <%= link_to about_path,class: 'nav-link text-light' do %>
               <i class=""></i> About
             <% end %>
           </li>
-          <li>
+          <li class="nav-item">
             <%= link_to new_customer_registration_path,class: 'nav-link text-light' do %>
               <i class=""></i> 新規登録
             <% end %>
           </li>
-          <li>
+          <li class="nav-item">
             <%= link_to customer_session_path ,class: 'nav-link text-light' do %>
               <i class=""></i> ログイン
             <% end %>
           </li>
-          <%= link_to 'ゲストログイン（閲覧用）', customers_guest_sign_in_path, method: :post %>
+          <li class="nav-item">
+            <%= link_to 'ゲストログイン（閲覧用）', customers_guest_sign_in_path, method: :post, class: 'nav-link text-light' %>
+          </li>
         <% end %>
-        </ul>
-      </div>
+      </ul>
     </div>
   </nav>
 </footer>
