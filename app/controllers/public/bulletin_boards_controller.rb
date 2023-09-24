@@ -1,4 +1,5 @@
 class Public::BulletinBoardsController < ApplicationController
+  before_action :authenticate_customer!
 
   def new
     @bulletin_board = BulletinBoard.new

@@ -1,0 +1,12 @@
+<h1>管理者投稿管理</h1>
+
+<% @bulletin_boards.each do |bulletin_board| %>
+          <tr>
+            <td><%= bulletin_board.customer_id %></td>
+            <td><%= link_to bulletin_board.customer.nick_name, customer_path(bulletin_board.customer) %></td>
+            <td><%= link_to bulletin_board.title, bulletin_board_path(bulletin_board) %></td>
+            <td><%= bulletin_board.message %></td>
+              <td><%= link_to "削除", bulletin_board_path(bulletin_board), method: :delete %></td>
+
+          </tr>
+        <% end %>
