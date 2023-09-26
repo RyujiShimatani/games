@@ -1,22 +1,83 @@
 .header {
-  background-color: #333; /* フッターの背景色 */
-  color: #fff; /* フッターのテキスト色 */
-  padding: 10px 0; /* フッターの内側の余白 */
-  position: fixed; /* フッターを固定位置に配置 */
-  top: 0; /* 画面下部に配置 */
-  width: 100%; /* フッターの幅を100%に設定 */
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
 }
 
 .main-content {
-  margin-bottom: 200px; /* フッターの高さより大きい値を設定 */
+  margin-bottom: 200px;
   margin-top: 100px;
+  z-index: 1;
 }
 
 .footer {
-  background-color: #333; /* フッターの背景色 */
-  color: #fff; /* フッターのテキスト色 */
-  padding: 10px 0; /* フッターの内側の余白 */
-  position: fixed; /* フッターを固定位置に配置 */
-  bottom: 0; /* 画面下部に配置 */
-  width: 100%; /* フッターの幅を100%に設定 */
+  color: #fff;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.navbar-light {
+  border-color: #99CCFF;
+}
+
+.line-form {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+.line-textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  resize: none;
+  font-size: 14px;
+}
+
+
+.line-button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+.line-button:hover {
+  background-color: #0056b3;
+}
+
+.line-style-comments {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.comment-line {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+
+.comment-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+
+.comment-text {
+  word-wrap: break-word;
 }

@@ -18,8 +18,8 @@
             <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to destroy_admin_session_path, method: :delete,class: 'nav-link text-light' do %>
-              <i class=""></i> ログアウト
+            <%= link_to admin_bulletin_boards_path, class: 'nav-link text-light' do %>
+              <i class=""></i> 掲示板一覧
             <% end %>
           </li>
         <% elsif customer_signed_in? %>
@@ -44,24 +44,6 @@
             <% end %>
           </li>
         <% else %>
-          <li class="nav-item">
-            <%= link_to about_path,class: 'nav-link text-light' do %>
-              <i class=""></i> About
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to new_customer_registration_path,class: 'nav-link text-light' do %>
-              <i class=""></i> 新規登録
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to customer_session_path ,class: 'nav-link text-light' do %>
-              <i class=""></i> ログイン
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'ゲストログイン（閲覧用）', customers_guest_sign_in_path, method: :post, class: 'nav-link text-light' %>
-          </li>
         <% end %>
       </ul>
     </div>

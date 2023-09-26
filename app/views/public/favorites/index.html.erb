@@ -1,8 +1,18 @@
 <main class="main-content">
-<h1>いいねした投稿一覧</h1>
-<ul>
-  <% @favorited_bulletin_boards.each do |bulletin_board| %>
-    <li><%= link_to bulletin_board.title, bulletin_board_path(bulletin_board) %></li>
-  <% end %>
-</ul>
+  <div class="container">
+    <h1 class="text-center mb-4">いいねした投稿一覧</h1>
+    <ul class="list-group">
+      <% @favorited_bulletin_boards.each do |bulletin_board| %>
+        <li class="list-group-item">
+          <%= link_to bulletin_board.title, bulletin_board_path(bulletin_board) %>
+          <span class="badge badge-primary badge-pill float-right">
+            コメント数: <%= bulletin_board.comments.count %>
+          </span>
+          <br>
+          ニックネーム: <%= bulletin_board.customer.nick_name %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </main>
+

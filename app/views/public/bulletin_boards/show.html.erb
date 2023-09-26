@@ -1,20 +1,57 @@
+<style>
+  .custom-border {
+    border: 3px inset #000;
+  }
+</style>
+
 <main class="main-content">
-<%= @bulletin_board.title %>
-<%= @bulletin_board.message %>
+  <div class="container pt-5">
+    <div class="row">
+      <div class="col text-center">
+        <h3>タイトル</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center custom-border bg-white">
+        <%= @bulletin_board.title %>
+      </div>
+    </div>
 
+    <div class="row mt-4">
+      <div class="col text-center">
+        <h3>内容</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center custom-border bg-white">
+        <%= @bulletin_board.message %>
+      </div>
+    </div>
 
-<div>
-  <p>コメント件数：<%= @bulletin_board.comments.count %></p>
-  <% @bulletin_board.comments.each do |comment| %>
-    <%= comment.customer.nick_name %>
-    <%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.comment %>
-  <% end %>
-</div>
-<div>
-  <%= form_with model: [@bulletin_board, @comment] do |f| %>
-    <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
-    <%= f.submit "送信する" %>
-  <% end %>
-</div>
-<%= render "public/favorites/btn", bulletin_board: @bulletin_board %>
+    <%= render "public/favorites/btn", bulletin_board: @bulletin_board %>
+
+    <div class="line-style-comments mt-4">
+      <p class="comment-count">コメント件数：<%= @bulletin_board.comments.count %></p>
+      <% @bulletin_board.comments.each do |comment| %>
+        <div class="comment-line">
+          <div class="comment-header">
+            <%= link_to customer_path(comment.customer) do %>
+              <%= comment.customer.nick_name %>
+            <% end %>
+            <%= comment.created_at.strftime('%Y/%m/%d') %>
+          </div>
+          <div class="comment-text">
+            <%= comment.comment %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="line-form mt-4">
+      <%= form_with model: [@bulletin_board, @comment] do |f| %>
+        <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに", class: 'line-textarea' %>
+        <%= f.submit "送信する", class: 'btn btn-dark' %>
+      <% end %>
+    </div>
+  </div>
 </main>

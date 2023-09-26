@@ -1,6 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#808080">
     <div class="container">
+      <a class="text-light" href="/"><%= image_tag('logo.png', size: '50x50') %>  ゲーマーコミュニティ</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,9 +25,9 @@
             </li>
           <% elsif customer_signed_in? %>
             <li class="nav-item">
-              <div class="text-white pr-2">ログイン中です <%= current_customer.nick_name %></div>
+              <div class="text-white">ログイン中です <%= current_customer.nick_name %></div>
             </li>
-            <li class="nav-item ml-auto">
+            <li class="nav-item">
               <%= link_to destroy_customer_session_path, method: :delete, class: 'nav-link text-light' do %>
                 <i class=""></i> ログアウト
               <% end %>

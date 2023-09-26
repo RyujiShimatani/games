@@ -1,33 +1,38 @@
 <main class="main-content">
-<div class="container">
-  <div class="row">
-    <h2>掲示板</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <h2>掲示板</h2>
+      </div>
+    </div>
 
-      <table class="table">
-        <thead>
+    <table class="table table-bordered table-striped">
+      <thead class="bg-dark text-white">
         <tr>
-          <th>会員ID</th>
           <th>ニックネーム</th>
           <th>タイトル</th>
           <th>内容</th>
+          <th>お気に入り</th>
+          <th>アクション</th>
         </tr>
-        <%= link_to 'いいねした投稿一覧', favorited_bulletin_boards_path %>
       </thead>
+      <tbody>
         <% @bulletin_boards.each do |bulletin_board| %>
           <tr>
-            <td><%= bulletin_board.customer_id %></td>
             <td><%= link_to bulletin_board.customer.nick_name, customer_path(bulletin_board.customer) %></td>
             <td><%= link_to bulletin_board.title, bulletin_board_path(bulletin_board) %></td>
             <td><%= bulletin_board.message %></td>
             <td id="favorite_btn_<%= bulletin_board.id %>">
               <%= render "public/favorites/btn", bulletin_board: bulletin_board %>
             </td>
-            <td><% if bulletin_board.customer == current_customer %>
-              <%= link_to "削除", bulletin_board_path(bulletin_board), method: :delete %>
-            <% end %></td>
+            <td>
+              <% if bulletin_board.customer == current_customer %>
+                <%= link_to "削除", bulletin_board_path(bulletin_board), method: :delete, class: "btn btn-dark btn-sm", data: { confirm: "本当に削除しますか？" } %>
+              <% end %>
+            </td>
           </tr>
         <% end %>
-      </table>
-    </div>
+      </tbody>
+    </table>
   </div>
 </main>

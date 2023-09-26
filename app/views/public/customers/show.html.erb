@@ -15,11 +15,11 @@
     <div class='row'>
       <div class='col text-right'>
               <% if @customer == current_customer %>
-                <%= link_to "編集する", edit_customer_path(@customer), class: "btn btn-success" %>
+                <%= link_to "編集する", edit_customer_path(@customer), class: "btn btn-dark" %>
               <% end %>
       </div>
     </div>
-    <div class="row m-4 border border-5 ">
+    <div class="row m-4 rounded " style="background-color:#FFFFFF">
       <div class="col text-left">
         <h4><自己紹介></h4>
       <div class="col text-center">
@@ -34,7 +34,7 @@
       </div>
       <div class='row'>
        <div class="col text-center">
-            <table class='table table-bordered mt-3'>
+            <table class='table table-bordered mt-3 rounded ' style="background-color:#FFFFFF">
               <tr>
                 <td class='table-active'>ニックネーム</td>
                 <td><%= @customer.nick_name %> </td>

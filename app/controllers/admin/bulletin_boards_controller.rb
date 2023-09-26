@@ -7,6 +7,7 @@ class Admin::BulletinBoardsController < ApplicationController
 
 
   def destroy
+    # byebug
     @bulletin_board = BulletinBoard.find(params[:id])
     @bulletin_board.destroy
     redirect_to admin_bulletin_boards_path

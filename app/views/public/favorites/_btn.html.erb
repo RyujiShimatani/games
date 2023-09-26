@@ -2,14 +2,14 @@
   <p>
     <%= link_to bulletin_board_favorites_path(bulletin_board), method: :delete, remote: true do %>
     <i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
-      <%= bulletin_board.favorites.count %> いいね
+      <%= bulletin_board.favorites.count %>
     <% end %>
   </p>
   <% else %>
   <p>
     <%= link_to bulletin_board_favorites_path(bulletin_board), method: :post, remote: true do %>
       <i class="fas fa-heart" aria-hidden="true"></i>
-      <%= bulletin_board.favorites.count %> いいね
+      <%= bulletin_board.favorites.count %>
     <% end %>
   </p>
 <% end %>
