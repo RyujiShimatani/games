@@ -10,7 +10,7 @@
         <% elsif customer_signed_in? %>
           <li class="nav-item mr-5">
             <%= link_to customer_path(current_customer), class: 'nav-link text-light' do %>
-              <i class=""></i> マイページ
+              <i class="fa-solid fa-user"></i> マイページ
             <% end %>
           </li>
           <li class="nav-item mr-5">
@@ -25,7 +25,7 @@
           </li>
           <li class="nav-item mr-5">
             <%= link_to favorited_bulletin_boards_path, class: 'nav-link text-light' do %>
-              <i class=""></i> いいねした投稿
+              <i class="fa-solid fa-thumbs-up"></i> いいねした投稿
             <% end %>
           </li>
         <% else %>

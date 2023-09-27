@@ -8,6 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
           <% if admin_signed_in? %>
+              <div class="text-white">管理者としてログイン中です</div>
             <li class="nav-item">
               <%= link_to admin_customers_path, class: 'nav-link text-light' do %>
                 <i class=""></i> 会員一覧

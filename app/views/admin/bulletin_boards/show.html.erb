@@ -34,7 +34,7 @@
       <% @bulletin_board.comments.each do |comment| %>
         <div class="comment-line">
           <div class="comment-header">
-            <%= link_to customer_path(comment.customer) do %>
+            <%= link_to admin_customer_path(comment.customer) do %>
               <%= comment.customer.nick_name %>
             <% end %>
             <%= comment.created_at.strftime('%Y/%m/%d') %>

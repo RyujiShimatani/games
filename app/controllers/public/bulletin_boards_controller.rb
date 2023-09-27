@@ -12,9 +12,13 @@ class Public::BulletinBoardsController < ApplicationController
   def create
     @bulletin_board = BulletinBoard.new(bulletin_board_params)
     @bulletin_board.customer_id = current_customer.id
-    @bulletin_board.save
-    flash[:notice] = "投稿が成功しました。"
-    redirect_to bulletin_boards_path
+    if @bulletin_board.save
+      flash[:notice] = "投稿が成功しました。"
+      redirect_to bulletin_boards_path
+    else
+      flash[:notice] = "投稿が失敗しました。"
+      redirect_to bulletin_boards_path
+    end
   end
 
   def show

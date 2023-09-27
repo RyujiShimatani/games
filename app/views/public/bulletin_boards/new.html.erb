@@ -1,17 +1,22 @@
-<main class="main-content d-flex justify-content-center align-items-center">
-  <div class="text-center">
-    <h1>掲示板募集内容</h1>
-    <%= form_with model: @bulletin_board do |f| %>
-      <div class="form-group">
-        <h4>タイトル</h4>
-        <%= f.text_field :title, class: "form-control col-12" %>
-      </div>
-      <div class="form-group">
-        <h4>内容</h4>
-        <%= f.text_area :message, class: "form-control col-12" %>
-      </div>
-      <%= f.submit '投稿', class: "btn btn-dark" %>
-    <% end %>
+<div class="container">
+  <div class="row justify-content-center" style="margin-top: 100px;">
+    <div class="col-md-6 text-center">
+      <h1>掲示板募集内容</h1>
+      <%= form_with model: @bulletin_board do |f| %>
+        <div class="form-group">
+          <h4>タイトル</h4>
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <h4>内容</h4>
+          <%= f.text_area :message, class: "form-control", rows: 5 %>
+        </div>
+        <%= f.submit '投稿', class: "btn btn-dark" %>
+      <% end %>
+    </div>
   </div>
-</main>
+</div>
+
+
+
 

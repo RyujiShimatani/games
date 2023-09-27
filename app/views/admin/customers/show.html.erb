@@ -1,3 +1,4 @@
+<main class="main-content">
 <div class='container pt-5'>
     <div class='row'>
         <div class='col-md-6'>
@@ -27,12 +28,8 @@
               </tr>
               <tr>
                 <td class='table-active'>好きなゲームジャンル</td>
-                <td><%#= @customer.genres.pluck(:name).join(', ') %></td>
+                <td><%= @customer.genres.pluck(:name).join(', ') %></td>
               </tr>
-              <!--<tr>-->
-              <!--  <td class='table-active'>好きなゲームジャンル</td>-->
-                <td><%#= @customer.genre.name) %></td>
-              <!--</tr>-->
               <tr>
                 <td class='table-active'>自己紹介</td>
                 <td><%= @customer.introduction %> </td>
@@ -46,3 +43,4 @@
         </div>
     </div>
 </div>
+</main>
