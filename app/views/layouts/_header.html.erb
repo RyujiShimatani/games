@@ -10,12 +10,17 @@
           <% if admin_signed_in? %>
             <li class="nav-item">
               <%= link_to admin_customers_path, class: 'nav-link text-light' do %>
-                <i class=""></i> 顧客一覧
+                <i class=""></i> 会員一覧
               <% end %>
             </li>
             <li class="nav-item">
+            <%= link_to admin_bulletin_boards_path, class: 'nav-link text-light' do %>
+              <i class=""></i> 掲示板一覧
+            <% end %>
+          </li>
+            <li class="nav-item">
               <%= link_to admin_genres_path, class: 'nav-link text-light' do %>
-                <i class=""></i> ジャンル一覧
+                <i class=""></i> ジャンル追加・一覧
               <% end %>
             </li>
             <li class="nav-item">
@@ -24,7 +29,7 @@
               <% end %>
             </li>
           <% elsif customer_signed_in? %>
-            <li class="nav-item">
+            <li class="nav-item ">
               <div class="text-white">ログイン中です <%= current_customer.nick_name %></div>
             </li>
             <li class="nav-item">
@@ -33,11 +38,6 @@
               <% end %>
             </li>
           <% else %>
-            <li class="nav-item">
-              <%= link_to about_path, class: 'nav-link text-light' do %>
-                <i class=""></i> About
-              <% end %>
-            </li>
             <li class="nav-item">
               <%= link_to new_customer_registration_path, class: 'nav-link text-light' do %>
                 <i class=""></i> 新規登録

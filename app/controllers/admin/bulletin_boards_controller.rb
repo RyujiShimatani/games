@@ -5,6 +5,10 @@ class Admin::BulletinBoardsController < ApplicationController
      @bulletin_boards = BulletinBoard.all
   end
 
+  def show
+    @bulletin_board = BulletinBoard.find(params[:id])
+  end
+
 
   def destroy
     # byebug

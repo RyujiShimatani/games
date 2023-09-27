@@ -1,14 +1,26 @@
 <main class="main-content">
-<h1>管理者投稿管理</h1>
+  <h1>管理者投稿管理</h1>
 
-<% @bulletin_boards.each do |bulletin_board| %>
-          <tr>
-            <td><%= bulletin_board.customer_id %></td>
-            <td><%= link_to bulletin_board.customer.nick_name, customer_path(bulletin_board.customer) %></td>
-            <td><%= link_to bulletin_board.title, bulletin_board_path(bulletin_board) %></td>
-            <td><%= bulletin_board.message %></td>
-              <td><%= link_to "削除", admin_bulletin_board_path(bulletin_board), method: :delete %></td>
-
-          </tr>
-        <% end %>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ユーザーID</th>
+        <th>ニックネーム</th>
+        <th>タイトル</th>
+        <th>内容</th>
+        <th>アクション</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bulletin_boards.each do |bulletin_board| %>
+        <tr>
+          <td><%= bulletin_board.customer_id %></td>
+          <td><%= link_to bulletin_board.customer.nick_name, admin_customer_path(bulletin_board.customer) %></td>
+          <td><%= link_to bulletin_board.title, admin_bulletin_board_path(bulletin_board) %></td>
+          <td><%= bulletin_board.message %></td>
+          <td><%= link_to "削除", admin_bulletin_board_path(bulletin_board), method: :delete, class: "btn btn-danger btn-sm", data: { confirm: "本当に削除しますか？" } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </main>

@@ -30,8 +30,8 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'homes#top'
     resources :customers, only: [:index, :show, :edit, :update]
-    resources :bulletin_boards, only: [ :index, :destroy]
-    resources :genres, only: [:index, :edit, :create, :update]
+    resources :bulletin_boards, only: [ :index, :show, :destroy]
+    resources :genres, only: [:index, :edit, :create, :update, :destroy]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

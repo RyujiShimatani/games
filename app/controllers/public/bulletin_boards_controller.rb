@@ -13,6 +13,7 @@ class Public::BulletinBoardsController < ApplicationController
     @bulletin_board = BulletinBoard.new(bulletin_board_params)
     @bulletin_board.customer_id = current_customer.id
     @bulletin_board.save
+    flash[:notice] = "投稿が成功しました。"
     redirect_to bulletin_boards_path
   end
 
@@ -38,6 +39,7 @@ class Public::BulletinBoardsController < ApplicationController
   def destroy
     @bulletin_board = BulletinBoard.find(params[:id])
     @bulletin_board.destroy
+    flash[:notice] = "投稿を削除しました。"
     redirect_to bulletin_boards_path
   end
 
