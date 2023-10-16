@@ -18,7 +18,11 @@
 - 気の合うゲーマーとつながるため
 ​
 ## 設計書
-<!--テーマを設定・提出する時点では不要です-->
+- テーブル定義書
+- https://docs.google.com/spreadsheets/d/1eZ4pUXAxcCVaKgP8FLhxp4VMJFcq4xfskGtjPyGO28k/edit?usp=sharing
+- 
+- ER図
+- https://drive.google.com/file/d/1_QacYIOlj8ykxDgM2oAJT28QxObVaa7j/view?usp=sharing
 ​
 ## 開発環境
 - OS：Linux(CentOS)
